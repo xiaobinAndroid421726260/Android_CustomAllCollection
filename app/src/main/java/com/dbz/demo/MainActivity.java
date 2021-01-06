@@ -24,6 +24,7 @@ public class MainActivity extends BaseActivity {
         binding.toolbar.setTitle("Android");
         binding.toolbar.setTitleTextColor(Color.WHITE);
         binding.btnCustomGallery.setOnClickListener(v -> ActivityUtils.startActivity(RecyclerViewPagerActivity.class));
+        binding.btnProgress.setOnClickListener(v -> ActivityUtils.startActivity(ProgressBarActivity.class));
         binding.btnCustomChart.setOnClickListener(v -> ActivityUtils.startActivity(CustomChartActivity.class));
         binding.btnCustomScrollChart.setOnClickListener(v -> ActivityUtils.startActivity(ChartReportActivity.class));
         binding.btnRingChart.setOnClickListener(v -> ActivityUtils.startActivity(RingChartActivity.class));

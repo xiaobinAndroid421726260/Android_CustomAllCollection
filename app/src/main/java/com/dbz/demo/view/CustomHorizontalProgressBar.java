@@ -14,6 +14,8 @@ import androidx.annotation.Nullable;
 
 import com.dbz.demo.R;
 
+import java.text.DecimalFormat;
+
 
 public class CustomHorizontalProgressBar extends View {
 
@@ -31,27 +33,31 @@ public class CustomHorizontalProgressBar extends View {
     /**
      * 进度条颜色
      */
-    private int mProgressColor;
+    private int mProgressColor = Color.GREEN;
 
     /**
      * 进度条的文本色
      */
-    private int mProgressTextColor;
+    private int mProgressTextColor = Color.WHITE;
 
     /**
-     * 是否显示文本百分比 (默认不显示)
+     * 是否显示文本 (默认不显示)
      */
     private boolean isShowProgressText = false;
 
     /**
+     * 是否显示文本百分比 (默认显示)
+     */
+    private boolean isShowRate = true;
+    /**
      * 进度条的最大进度
      */
-    private int mProgressMax;
+    private int mProgressMax = 100;
 
     /**
      * 进度条的当前进度
      */
-    private int mProgress;
+    private int mProgress = 50;
 
     /**
      * 画笔
@@ -90,16 +96,16 @@ public class CustomHorizontalProgressBar extends View {
                     mProgressBackColor = array.getColor(attr, Color.parseColor("#E6E6E6"));
                     break;
                 case R.styleable.CustomHorizontalProgressBar_dbz_progress_color:
-                    mProgressColor = array.getColor(attr, Color.BLUE);
+                    mProgressColor = array.getColor(attr, mProgressColor);
                     break;
                 case R.styleable.CustomHorizontalProgressBar_dbz_progress_bar_text_color:
-                    mProgressTextColor = array.getColor(attr, Color.WHITE);
+                    mProgressTextColor = array.getColor(attr, mProgressTextColor);
                     break;
                 case R.styleable.CustomHorizontalProgressBar_dbz_progress_max:
-                    mProgressMax = array.getInteger(attr, 100);
+                    mProgressMax = array.getInteger(attr, mProgressMax);
                     break;
                 case R.styleable.CustomHorizontalProgressBar_dbz_progress:
-                    mProgress = array.getInteger(attr, 50);
+                    mProgress = array.getInteger(attr, mProgress);
                     break;
                 case R.styleable.CustomHorizontalProgressBar_dbz_is_show_progress_text:
                     isShowProgressText = array.getBoolean(attr, true);
@@ -151,6 +157,10 @@ public class CustomHorizontalProgressBar extends View {
             String text = mProgress + "%";
             float x = (float) this.getMeasuredWidth() * mProgress / mProgressMax - mPaint.measureText(text) - 10;
             float y = (float) this.getMeasuredHeight() / 2f - mPaint.getFontMetrics().ascent / 2f - mPaint.getFontMetrics().descent / 2f;
+            // 显示百分比
+            if (isShowRate) {
+                text = getPercent(mProgress, mProgressMax) + "%";
+            }
             if (mProgress > 10) {//解决百分比显示不全问题
                 canvas.drawText(text, x, y, mPaint);
             } else {
@@ -159,16 +169,23 @@ public class CustomHorizontalProgressBar extends View {
         }
     }
 
+    /**
+     * 返回当前百分比
+     */
+    private String getPercent(int progress, int max) {
+        DecimalFormat decimalFormat = new DecimalFormat("#");
+        return decimalFormat.format(progress * 100 / max);
+    }
 
     /**
      * 设置当前进度
      */
     public void setProgress(int progress) {
         this.mProgress = progress;
-        if (mProgress > mProgressMax){
+        if (mProgress > mProgressMax) {
             mProgress = mProgressMax;
         }
-        if (mProgress < 0){
+        if (mProgress < 0) {
             mProgress = 0;
         }
         invalidate();
@@ -186,7 +203,15 @@ public class CustomHorizontalProgressBar extends View {
      * 是否显示文本 默认不显示
      */
     public CustomHorizontalProgressBar setShowProgressText(boolean showProgressText) {
-        isShowProgressText = showProgressText;
+        this.isShowProgressText = showProgressText;
+        return this;
+    }
+
+    /**
+     * 是否显示文本百分比 默认显示
+     */
+    public CustomHorizontalProgressBar setShowRate(boolean isShowRate) {
+        this.isShowRate = isShowRate;
         return this;
     }
 

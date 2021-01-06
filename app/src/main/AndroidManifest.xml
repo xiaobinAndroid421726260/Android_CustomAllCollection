@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_CustomAllCollection">
-        <activity android:name=".RecyclerViewPagerActivity"></activity>
+        <activity android:name=".ProgressBarActivity"></activity>
+        <activity android:name=".RecyclerViewPagerActivity" />
         <activity android:name=".RingChartActivity" />
         <activity android:name=".ChartReportActivity" />
         <activity android:name=".CustomChartActivity" />
