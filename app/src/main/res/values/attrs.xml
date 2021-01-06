@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="DynamicProgressBar">
+        <attr name="dbz_back_drawable" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomHorizontalProgressBar">
+        <attr name="dbz_radius" format="dimension" />
+        <attr name="dbz_progress_max" format="integer" />
+        <attr name="dbz_progress" format="integer" />
+        <attr name="dbz_progress_bar_back_color" format="color" />
+        <attr name="dbz_progress_color" format="color" />
+        <attr name="dbz_progress_bar_text_color" format="color" />
+        <attr name="dbz_is_show_progress_text" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="LineChartView">
+        <!-- x轴线颜色 -->
+        <attr name="dbz_x_line_color" format="color" />
+        <!-- x轴线的宽度 -->
+        <attr name="dbz_x_line_width" format="dimension" />
+        <!-- x轴上的文字颜色 -->
+        <attr name="dbz_x_text_color" format="color" />
+        <!-- x轴上的文字大小 -->
+        <attr name="dbz_x_text_size" format="dimension" />
+        <!-- 折线点位文本大小 -->
+        <attr name="dbz_dot_text_size" format="dimension" />
+        <!-- 折线点位文字颜色 -->
+        <attr name="dbz_dot_text_color" format="color" />
+        <!-- 折线的颜色 -->
+        <attr name="dbz_line_chart_color" format="color" />
+        <!-- 背景颜色 -->
+        <attr name="dbz_back_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ChartReportView">
+        <!-- 背景颜色 -->
+        <attr name="dbz_background_color" format="color" />
+        <!-- x、y轴线颜色 -->
+        <attr name="dbz_x_y_color" format="color" />
+        <!-- x、y轴上的文本颜色 -->
+        <attr name="dbz_x_y_text_color" format="color" />
+        <!-- x、y轴上的文本大小 -->
+        <attr name="dbz_x_y_text_size" format="dimension" />
+        <!-- 折线颜色 -->
+        <attr name="dbz_line_point_color" format="color" />
+        <!-- 折线点位颜色颜色 -->
+        <attr name="dbz_point_color" format="color" />
+        <!-- 折线宽度 -->
+        <attr name="dbz_line_width" format="dimension" />
+        <!-- 折线点位文字颜色 -->
+        <attr name="dbz_point_text_color" format="color" />
+        <!-- 折线点位文字大小 -->
+        <attr name="dbz_point_text_size" format="dimension" />
+        <!-- 折线点位之间的间距距离 -->
+        <attr name="dbz_point_interval" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="RingChartVing">
+        <!-- 背景颜色 -->
+        <attr name="dbz_ring_background_color" format="color" />
+        <!-- 圆半径颜色 -->
+        <attr name="dbz_radius_color" format="color" />
+        <!-- 圆半径大小 -->
+        <attr name="dbz_circle_radius_size" format="dimension" />
+        <!-- 圆半径文本大小 -->
+        <attr name="dbz_circle_radius_text_size" format="dimension" />
+        <!-- 圆外半径大小 -->
+        <attr name="dbz_radius_size" format="dimension" />
+    </declare-styleable>
+
+</resources>

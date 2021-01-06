@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_CustomAllCollection">
+        <activity android:name=".RecyclerViewPagerActivity"></activity>
+        <activity android:name=".RingChartActivity" />
+        <activity android:name=".ChartReportActivity" />
+        <activity android:name=".CustomChartActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
