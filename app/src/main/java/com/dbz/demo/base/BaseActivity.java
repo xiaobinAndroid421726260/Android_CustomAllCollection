@@ -7,23 +7,32 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.dbz.demo.base.viewmodel.BaseViewModel;
 import com.gyf.immersionbar.ImmersionBar;
 
 import me.jessyan.autosize.AutoSizeCompat;
 import me.jessyan.autosize.internal.CustomAdapt;
 
-public abstract class BaseActivity extends AppCompatActivity implements CustomAdapt {
+public abstract class BaseActivity<VM extends BaseViewModel> extends AppCompatActivity implements CustomAdapt {
+
+    protected VM mViewModel;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getContentView());
+        mViewModel = obtainViewModel();
+        if (null != mViewModel){
+            mViewModel.register();
+        }
         initView(savedInstanceState);
     }
 
     protected abstract View getContentView();
 
     protected abstract void initView(Bundle bundle);
+
+    protected abstract VM obtainViewModel();
 
     /**
      * 设置状态栏颜色
@@ -62,5 +71,11 @@ public abstract class BaseActivity extends AppCompatActivity implements CustomAd
         return 667;
     }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (null != mViewModel){
+            mViewModel.unRegister();
+        }
+    }
 }

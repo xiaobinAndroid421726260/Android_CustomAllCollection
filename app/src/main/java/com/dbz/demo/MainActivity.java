@@ -6,7 +6,9 @@ import android.view.View;
 
 import com.blankj.utilcode.util.ActivityUtils;
 import com.dbz.demo.base.BaseActivity;
+import com.dbz.demo.base.viewmodel.BaseViewModel;
 import com.dbz.demo.databinding.ActivityMainBinding;
+import com.dbz.demo.viewmodel.CustomChartActivity;
 
 public class MainActivity extends BaseActivity {
 
@@ -28,5 +30,10 @@ public class MainActivity extends BaseActivity {
         binding.btnCustomChart.setOnClickListener(v -> ActivityUtils.startActivity(CustomChartActivity.class));
         binding.btnCustomScrollChart.setOnClickListener(v -> ActivityUtils.startActivity(ChartReportActivity.class));
         binding.btnRingChart.setOnClickListener(v -> ActivityUtils.startActivity(RingChartActivity.class));
+    }
+
+    @Override
+    protected BaseViewModel obtainViewModel() {
+        return null;
     }
 }

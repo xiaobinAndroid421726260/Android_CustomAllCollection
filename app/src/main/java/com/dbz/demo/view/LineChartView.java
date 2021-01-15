@@ -16,7 +16,9 @@ import android.view.View;
 import androidx.annotation.Nullable;
 
 
+import com.blankj.utilcode.util.LogUtils;
 import com.dbz.demo.R;
+import com.dbz.demo.model.BaseCustomModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -135,7 +137,6 @@ public class LineChartView extends View {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
         initView();
-//        initArrayList();
     }
 
     private void init(Context context, @Nullable AttributeSet attrs) {
@@ -218,22 +219,30 @@ public class LineChartView extends View {
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
         if (changed) {
-            mWidth = getWidth();
-            mHeight = getHeight();
-            // 把屏幕整体分成 数据的个数份 多少数据就多少份 每份的间距
-            mDotSpacing = (mWidth - (mWidth - getPaddingLeft() - getPaddingRight()) / mLineValue.size()) / mLineValue.size();
-            // 获取X轴数据文本最后一个的高度
-            Rect rect = getTextBounds(mXValue.get(mXValue.size() - 1).value + "-", mXTextPaint);
-            // 文本立着显示，宽度即是高度
-            mXTextHeight = rect.width();
-            // 文本距离X轴直线的高度
-            mXTextXLineSpacing = mHeight - mXTextHeight - mTopBottomSpacing * 2;
-            // 取数据中的最大值
-            for (int i = 0; i < mLineValue.size(); i++) {
-                max = Math.max(max, mLineValue.get(i).num);
-            }
-            if (max == 0) max = 1;
+            reSetCalculation();
         }
+    }
+
+    /**
+     * 重新计算布局距离
+     */
+    private void reSetCalculation(){
+        mWidth = getWidth();
+        mHeight = getHeight();
+        if (mXValue.size() == 0 || mLineValue.size() == 0) return;
+        // 把屏幕整体分成 数据的个数份 多少数据就多少份 每份的间距
+        mDotSpacing = (mWidth - (mWidth - getPaddingLeft() - getPaddingRight()) / mLineValue.size()) / mLineValue.size();
+        // 获取X轴数据文本最后一个的高度
+        Rect rect = getTextBounds(mXValue.get(mXValue.size() - 1).value + "-", mXTextPaint);
+        // 文本立着显示，宽度即是高度
+        mXTextHeight = rect.width();
+        // 文本距离X轴直线的高度
+        mXTextXLineSpacing = mHeight - mXTextHeight - mTopBottomSpacing * 2;
+        // 取数据中的最大值
+        for (int i = 0; i < mLineValue.size(); i++) {
+            max = Math.max(max, mLineValue.get(i).num);
+        }
+        if (max == 0) max = 1;
     }
 
     @Override
@@ -388,7 +397,7 @@ public class LineChartView extends View {
             Rect rect = getTextBounds(mXValue.get(i).value, mXTextPaint);
             y = mXTextXLineSpacing - mXLineWidth + rect.height();
             if (eventX >= x - (float) rect.height() / 2 - dp8 && eventX <= x + rect.height() + (float) dp8 / 2 &&
-                    eventY >= y - dp8 && eventY <= y + rect.width() + dp8 && mCurrentSelectDot != i + 1){
+                    eventY >= y - dp8 && eventY <= y + rect.width() + dp8 && mCurrentSelectDot != i + 1) {
                 mCurrentSelectDot = i + 1;
                 invalidate();
                 return;
@@ -414,13 +423,14 @@ public class LineChartView extends View {
     public void setXYLineValue(List<XValue> mXValue, List<LineValue> mLineValue) {
         this.mXValue = mXValue;
         this.mLineValue = mLineValue;
+        reSetCalculation();
         invalidate();
     }
 
     /**
      * 获取丈量文本的矩形
      *
-     * @param text 文本
+     * @param text  文本
      * @param paint 画笔
      */
     private Rect getTextBounds(String text, Paint paint) {

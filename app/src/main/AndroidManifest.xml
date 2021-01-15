@@ -13,7 +13,7 @@
         <activity android:name=".RecyclerViewPagerActivity" />
         <activity android:name=".RingChartActivity" />
         <activity android:name=".ChartReportActivity" />
-        <activity android:name=".CustomChartActivity" />
+        <activity android:name=".viewmodel.CustomChartActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

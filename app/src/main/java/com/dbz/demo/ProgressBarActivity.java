@@ -7,6 +7,7 @@ import android.os.Looper;
 import android.view.View;
 
 import com.dbz.demo.base.BaseActivity;
+import com.dbz.demo.base.viewmodel.BaseViewModel;
 import com.dbz.demo.databinding.ActivityProgressBarBinding;
 
 public class ProgressBarActivity extends BaseActivity {
@@ -82,5 +83,10 @@ public class ProgressBarActivity extends BaseActivity {
                 .setProgressTextColor(getResources().getColor(R.color.red))
                 .setRadius(30)
                 .setProgress(500);
+    }
+
+    @Override
+    protected BaseViewModel obtainViewModel() {
+        return null;
     }
 }

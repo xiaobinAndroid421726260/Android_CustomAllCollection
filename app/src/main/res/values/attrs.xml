@@ -5,6 +5,11 @@
         <attr name="dbz_back_drawable" format="reference" />
     </declare-styleable>
 
+    <declare-styleable name="RoundRelativeLayout">
+        <attr name="dbz_layout_radius" format="dimension" />
+        <attr name="dbz_clip_back_ground" format="boolean" />
+    </declare-styleable>
+
     <declare-styleable name="CustomHorizontalProgressBar">
         <attr name="dbz_radius" format="dimension" />
         <attr name="dbz_progress_max" format="integer" />

@@ -1,42 +1,33 @@
-package com.dbz.demo;
+package com.dbz.demo.model;
 
-import android.graphics.Color;
-import android.os.Bundle;
-import android.view.View;
 
-import com.dbz.demo.base.BaseActivity;
-import com.dbz.demo.databinding.ActivityCustomChartBinding;
+import com.dbz.demo.base.model.BaseModel;
 import com.dbz.demo.view.LineChartView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomChartActivity extends BaseActivity {
+public class CustomChartModel extends BaseModel<BaseCustomModel> {
 
-    private ActivityCustomChartBinding binding;
     private final List<LineChartView.XValue> mXValue1 = new ArrayList<>();
     private final List<LineChartView.LineValue> mLineValue1 = new ArrayList<>();
     private final List<LineChartView.XValue> mXValue2 = new ArrayList<>();
     private final List<LineChartView.LineValue> mLineValue2 = new ArrayList<>();
 
     @Override
-    protected View getContentView() {
-        binding = ActivityCustomChartBinding.inflate(getLayoutInflater());
-        return binding.getRoot();
-    }
-
-    @Override
-    protected void initView(Bundle bundle) {
-        setStatusBarColor(R.color.green_color);
-        binding.toolbar.setTitle("Android自定义折线图");
-        binding.toolbar.setTitleTextColor(Color.WHITE);
-        binding.toolbar.setNavigationIcon(R.drawable.onback_white);
-        binding.toolbar.setNavigationOnClickListener(v -> onBackPressed());
+    protected void load() {
         initArrayList1();
         initArrayList2();
-        binding.lineChart1.setXYLineValue(mXValue1, mLineValue1);
-        binding.lineChart2.setXYLineValue(mXValue2, mLineValue2);
+        BaseCustomModel mBaseCustomModel = new BaseCustomModel();
+        mBaseCustomModel.setCode(1);
+        mBaseCustomModel.setMsg("success");
+        mBaseCustomModel.setModelList1(mXValue1);
+        mBaseCustomModel.setLineValues1(mLineValue1);
+        mBaseCustomModel.setModelList2(mXValue2);
+        mBaseCustomModel.setLineValues2(mLineValue2);
+        loadSuccess(mBaseCustomModel);
     }
+
 
     private void initArrayList1() {
         mXValue1.clear();

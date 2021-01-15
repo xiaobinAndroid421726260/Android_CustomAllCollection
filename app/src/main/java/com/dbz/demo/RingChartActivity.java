@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.dbz.demo.base.BaseActivity;
+import com.dbz.demo.base.viewmodel.BaseViewModel;
 import com.dbz.demo.databinding.ActivityRingChartBinding;
 
 import java.util.ArrayList;
@@ -39,6 +40,11 @@ public class RingChartActivity extends BaseActivity {
         initArrayList1();
         initArrayList2();
         initArrayList3();
+    }
+
+    @Override
+    protected BaseViewModel obtainViewModel() {
+        return null;
     }
 
     private void initArrayList1(){

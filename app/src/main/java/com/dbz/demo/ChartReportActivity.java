@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.blankj.utilcode.util.ToastUtils;
 import com.dbz.demo.base.BaseActivity;
+import com.dbz.demo.base.viewmodel.BaseViewModel;
 import com.dbz.demo.databinding.ActivityChartReportBinding;
 import com.dbz.demo.view.ChartReportView;
 
@@ -47,6 +48,11 @@ public class ChartReportActivity extends BaseActivity {
         binding.chartview2.setOnSelectedActionClick((position, num, text) -> {
             ToastUtils.showShort("position : " + position + "   num : " + num + "   text : " + text);
         });
+    }
+
+    @Override
+    protected BaseViewModel obtainViewModel() {
+        return null;
     }
 
     private void initArrayList1(){

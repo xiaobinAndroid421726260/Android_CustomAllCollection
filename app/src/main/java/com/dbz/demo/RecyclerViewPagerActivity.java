@@ -12,6 +12,7 @@ import android.view.View;
 
 import com.dbz.demo.adapter.RecyclerViewAdapter;
 import com.dbz.demo.base.BaseActivity;
+import com.dbz.demo.base.viewmodel.BaseViewModel;
 import com.dbz.demo.databinding.ActivityRecyclerViewPagerBinding;
 import com.dbz.demo.viewpager.CustPagerTransformer;
 import com.dbz.demo.viewpager.ViewPagerAdapter;
@@ -44,6 +45,11 @@ public class RecyclerViewPagerActivity extends BaseActivity {
         }
         initPagerAdapter();
         initAdapter();
+    }
+
+    @Override
+    protected BaseViewModel obtainViewModel() {
+        return null;
     }
 
 
