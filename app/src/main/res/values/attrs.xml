@@ -62,6 +62,37 @@
         <attr name="dbz_point_interval" format="dimension" />
     </declare-styleable>
 
+    <declare-styleable name="StockPriceView">
+        <!-- 背景颜色 -->
+        <attr name="background_color_dbz" format="color" />
+        <!-- x、y轴线颜色 -->
+        <attr name="x_y_color_dbz" format="color" />
+        <!-- x轴上的文本颜色 -->
+        <attr name="x_text_color_dbz" format="color" />
+        <!-- x轴上的文本颜色 -->
+        <attr name="y_text_color_dbz" format="color" />
+        <!-- x、y轴上的文本大小 -->
+        <attr name="x_text_size_dbz" format="dimension" />
+        <!-- y轴上的文本大小 -->
+        <attr name="y_text_size_dbz" format="dimension" />
+        <!-- 背景虚线颜色 -->
+        <attr name="dotted_line_dbz" format="color" />
+        <!-- 折线颜色 -->
+        <attr name="line_color_dbz" format="color" />
+        <!-- 折线内阴影颜色 -->
+        <attr name="line_shadow_color_dbz" format="color" />
+        <!-- 折线点位颜色颜色 -->
+        <attr name="point_color_dbz" format="color" />
+        <!-- 折线点位直线颜色 -->
+        <attr name="line_point_color_dbz" format="color" />
+        <!-- 折线宽度 -->
+        <attr name="line_width_dbz" format="dimension" />
+        <!-- 折线点位文字颜色 -->
+        <attr name="point_text_color_dbz" format="color" />
+        <!-- 折线点位文字大小 -->
+        <attr name="point_text_size_dbz" format="dimension" />
+    </declare-styleable>
+
     <declare-styleable name="RingChartVing">
         <!-- 背景颜色 -->
         <attr name="dbz_ring_background_color" format="color" />

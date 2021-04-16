@@ -29,6 +29,7 @@ public class MainActivity extends BaseActivity {
         binding.btnProgress.setOnClickListener(v -> ActivityUtils.startActivity(ProgressBarActivity.class));
         binding.btnCustomChart.setOnClickListener(v -> ActivityUtils.startActivity(CustomChartActivity.class));
         binding.btnCustomScrollChart.setOnClickListener(v -> ActivityUtils.startActivity(ChartReportActivity.class));
+        binding.btnCustomStockPrice.setOnClickListener(v -> ActivityUtils.startActivity(StockPriceActivity.class));
         binding.btnRingChart.setOnClickListener(v -> ActivityUtils.startActivity(RingChartActivity.class));
     }
 

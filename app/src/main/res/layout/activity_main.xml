@@ -59,6 +59,17 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_custom_chart" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_custom_stock_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="自定义滚动折线阴影"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_custom_scroll_chart" />
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_ring_chart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -67,6 +78,6 @@
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_custom_scroll_chart" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_custom_stock_price" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
