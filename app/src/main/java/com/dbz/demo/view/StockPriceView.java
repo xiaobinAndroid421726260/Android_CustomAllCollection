@@ -21,6 +21,13 @@ import com.dbz.demo.R;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * description:
+ *
+ * @author Db_z
+ * date 2021/4/15 14:20
+ * @version V1.0
+ */
 public class StockPriceView extends View {
 
     /**

@@ -34,15 +34,13 @@ public class StockPriceActivity extends BaseActivity {
         binding.toolbar.setTitleTextColor(Color.WHITE);
         binding.toolbar.setNavigationIcon(R.drawable.onback_white);
         binding.toolbar.setNavigationOnClickListener(v -> onBackPressed());
-        new Handler(getMainLooper()).postDelayed(() -> {
-            initArrayList1();
-            binding.stockPrice.setValue(mXValue1, mYValue1);
-            binding.stockPrice.setCurrentSelectPoint(mXValue1.size());
-            binding.stockPrice.setOnSelectedActionClick((position, num, text) -> {
-                LogUtils.e("---position : " + position + "   num : " + num + "   text : " + text);
-                ToastUtils.showShort("position : " + position + "   num : " + num + "   text : " + text);
-            });
-        }, 500);
+        initArrayList1();
+        binding.stockPrice.setValue(mXValue1, mYValue1);
+        binding.stockPrice.setCurrentSelectPoint(mXValue1.size());
+        binding.stockPrice.setOnSelectedActionClick((position, num, text) -> {
+            LogUtils.e("---position : " + position + "   num : " + num + "   text : " + text);
+            ToastUtils.showShort("position : " + position + "   num : " + num + "   text : " + text);
+        });
     }
 
     @Override
@@ -50,44 +48,44 @@ public class StockPriceActivity extends BaseActivity {
         return null;
     }
 
-    private void initArrayList1(){
+    private void initArrayList1() {
         mXValue1.clear();
         mYValue1.clear();
-        mXValue1.add(new StockPriceView.XValue("03.01", "3.00"));
-        mXValue1.add(new StockPriceView.XValue("03.02", "3.00"));
-        mXValue1.add(new StockPriceView.XValue("03.03", "1.00"));
-        mXValue1.add(new StockPriceView.XValue("03.04", "3.00"));
-        mXValue1.add(new StockPriceView.XValue("03.05", "3.00"));
-        mXValue1.add(new StockPriceView.XValue("03.06", "3.00"));
-        mXValue1.add(new StockPriceView.XValue("03.07", "1.00"));
-        mXValue1.add(new StockPriceView.XValue("03.08", "3.00"));
-        mXValue1.add(new StockPriceView.XValue("03.09", "3.00"));
-        mXValue1.add(new StockPriceView.XValue("03.10", "2.00"));
-        mXValue1.add(new StockPriceView.XValue("03.11", "0.00"));
-        mXValue1.add(new StockPriceView.XValue("03.12", "0.00"));
-        mXValue1.add(new StockPriceView.XValue("03.13", "0.00"));
-        mXValue1.add(new StockPriceView.XValue("03.14", "0.00"));
-        mXValue1.add(new StockPriceView.XValue("03.15", "3.00"));
-        mXValue1.add(new StockPriceView.XValue("03.16", "0.00"));
-        mXValue1.add(new StockPriceView.XValue("03.17", "0.00"));
-        mXValue1.add(new StockPriceView.XValue("03.18", "0.00"));
-        mXValue1.add(new StockPriceView.XValue("03.19", "0.00"));
-        mXValue1.add(new StockPriceView.XValue("03.20", "0.00"));
-        mXValue1.add(new StockPriceView.XValue("03.21", "0.00"));
-        mXValue1.add(new StockPriceView.XValue("03.22", "2.00"));
-        mXValue1.add(new StockPriceView.XValue("03.23", "1.00"));
-        mXValue1.add(new StockPriceView.XValue("03.24", "1.00"));
-        mXValue1.add(new StockPriceView.XValue("03.25", "1.00"));
-        mXValue1.add(new StockPriceView.XValue("03.26", "0.00"));
-        mXValue1.add(new StockPriceView.XValue("03.27", "0.00"));
-        mXValue1.add(new StockPriceView.XValue("03.28", "0.00"));
-        mXValue1.add(new StockPriceView.XValue("03.29", "1.00"));
-        mXValue1.add(new StockPriceView.XValue("03.30", "0.00"));
+        mXValue1.add(new StockPriceView.XValue("03.01", "13.00"));
+        mXValue1.add(new StockPriceView.XValue("03.02", "13.00"));
+        mXValue1.add(new StockPriceView.XValue("03.03", "16.00"));
+        mXValue1.add(new StockPriceView.XValue("03.04", "23.00"));
+        mXValue1.add(new StockPriceView.XValue("03.05", "23.00"));
+        mXValue1.add(new StockPriceView.XValue("03.06", "20.00"));
+        mXValue1.add(new StockPriceView.XValue("03.07", "13.00"));
+        mXValue1.add(new StockPriceView.XValue("03.08", "16.00"));
+        mXValue1.add(new StockPriceView.XValue("03.09", "15.00"));
+        mXValue1.add(new StockPriceView.XValue("03.10", "19.00"));
+        mXValue1.add(new StockPriceView.XValue("03.11", "16.00"));
+        mXValue1.add(new StockPriceView.XValue("03.12", "12.00"));
+        mXValue1.add(new StockPriceView.XValue("03.13", "10.00"));
+        mXValue1.add(new StockPriceView.XValue("03.14", "20.00"));
+        mXValue1.add(new StockPriceView.XValue("03.15", "13.00"));
+        mXValue1.add(new StockPriceView.XValue("03.16", "25.00"));
+        mXValue1.add(new StockPriceView.XValue("03.17", "19.00"));
+        mXValue1.add(new StockPriceView.XValue("03.18", "22.00"));
+        mXValue1.add(new StockPriceView.XValue("03.19", "23.00"));
+        mXValue1.add(new StockPriceView.XValue("03.20", "23.00"));
+        mXValue1.add(new StockPriceView.XValue("03.21", "12.00"));
+        mXValue1.add(new StockPriceView.XValue("03.22", "16.00"));
+        mXValue1.add(new StockPriceView.XValue("03.23", "13.00"));
+        mXValue1.add(new StockPriceView.XValue("03.24", "10.00"));
+        mXValue1.add(new StockPriceView.XValue("03.25", "12.00"));
+        mXValue1.add(new StockPriceView.XValue("03.26", "20.00"));
+        mXValue1.add(new StockPriceView.XValue("03.27", "16.00"));
+        mXValue1.add(new StockPriceView.XValue("03.28", "12.00"));
+        mXValue1.add(new StockPriceView.XValue("03.29", "13.00"));
+        mXValue1.add(new StockPriceView.XValue("03.30", "15.00"));
 
         mYValue1.add(new StockPriceView.YValue(0, "0.00"));
-        mYValue1.add(new StockPriceView.YValue(2, "0.75"));
-        mYValue1.add(new StockPriceView.YValue(4, "1.50"));
-        mYValue1.add(new StockPriceView.YValue(6, "2.25"));
-        mYValue1.add(new StockPriceView.YValue(8, "3.00"));
+        mYValue1.add(new StockPriceView.YValue(1, "5.00"));
+        mYValue1.add(new StockPriceView.YValue(2, "15.00"));
+        mYValue1.add(new StockPriceView.YValue(3, "20.00"));
+        mYValue1.add(new StockPriceView.YValue(4, "25.00"));
     }
 }
